@@ -206,3 +206,38 @@ CREATE TABLE materias (
 )ENGINE=InnoDB;
 INSERT INTO materias (nombre_materia,fyh_creacion,estado)
 VALUES ('MATEMÁTICA','2023-12-28 20:29:10','1');
+
+CREATE TABLE pagos (
+
+  id_pago      INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  estudiante_id       INT (11) NOT NULL,
+  mes_pagado                 VARCHAR (50) NOT NULL,
+  monto_pagado                 VARCHAR (10) NOT NULL,
+  fecha_pagado                 VARCHAR (20) NOT NULL,
+
+  fyh_creacion   DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado        VARCHAR (11),
+
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
+
+)ENGINE=InnoDB;
+
+CREATE TABLE asignaciones (
+
+  id_asignacion      INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  docente_id         INT (11) NOT NULL,
+  nivel_id           INT (11) NOT NULL,      
+  grado_id           INT (11) NOT NULL,      
+  materia_id           INT (11) NOT NULL,      
+  
+  fyh_creacion   DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado        VARCHAR (11),
+
+  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
+  FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
+  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade,
+  FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
+
+)ENGINE=InnoDB;
