@@ -75,7 +75,7 @@ if ($sentencia->execute()) {
     $pdo->rollBack();
     $_SESSION['mensaje'] = "Error: no se pudo registrar en la base de datos. Contacte al administrador.";
     $_SESSION['icono'] = "error";
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    header('Location:' . APP_URL . "/admin/docentes");
     exit();
 }
 

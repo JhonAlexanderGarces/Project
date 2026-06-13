@@ -34,6 +34,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="<?=APP_URL;?>/public/dist/css/adminlte.min.css">
 
+    <!-- jQuery -->
+<script src="<?=APP_URL;?>/public/plugins/jquery/jquery.min.js"></script>
+
     <!-- Sweetaler2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -264,30 +267,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-    <a href="#" class="nav-link active">
-        <i class="nav-icon bi bi-person-raised-hand"></i>
-        <p>
-            Docentes
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item">
-            <a href="<?=APP_URL;?>/admin/docentes" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Listado de docentes</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="<?=APP_URL;?>/admin/docentes/asignacion.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Asignación de materias</p>
-            </a>
-        </li>
-    </ul>
-</li>
+                                    <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon bi bi-person-raised-hand"></i>
+                        <p>
+                            Docentes
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?=APP_URL;?>/admin/docentes" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Listado de docentes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?=APP_URL;?>/admin/docentes/asignacion.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Asignación de materias</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
+                <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/calificaciones" class="nav-link active">
+                    <i class="bi bi-5-square"></i>
+                        <p>
+                            Calificaciones
+                            
+                        </p>
+                    </a>
+                </li>
 
 
                     <li class="nav-item">
